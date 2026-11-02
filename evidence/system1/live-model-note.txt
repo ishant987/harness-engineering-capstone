@@ -1,0 +1,15 @@
+System 1 live API discrepancy observed on 2026-09-25.
+
+The reference exercise README expects:
+- 7 routed
+- 1 escalated
+
+The supplied solution code and tests pass, but live Vocareum models
+(Claude Haiku 4.5, Sonnet 4.5, and Opus 4.5) returned end_turn early for
+claim_01_kitchen_fire before calling classify_claim, assess_severity, or a
+terminal routing/escalation tool.
+
+A diagnostic run showed the final model response asked for a repair-cost
+estimate because the fixture does not provide an explicit damage amount.
+
+No reference source files or fixtures were modified.
