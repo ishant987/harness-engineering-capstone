@@ -21,7 +21,7 @@
 
 2. **Anti-pattern.** Name one anti-pattern `test_antipatterns.py` checks for. What would break in your run if the loop used it?
 
-→ The System 1 anti-pattern suite checks that the loop does not use string-membership tests against assistant text as a control-flow signal. My `/workspace/evidence/system1/tests.txt` test artifact covers this alongside the rest of the 29-test suite. If the loop searched generated prose for a phrase such as `"done"` or `"route"`, the `claim_03_water_damage` run could terminate incorrectly even though its structured sequence required five `tool_use` turns before `end_turn`. The test also protects against replacing `stop_reason` with an arbitrary integer iteration cap.
+→ The System 1 anti-pattern suite checks that the loop does not use string-membership tests against assistant text as a control-flow signal. My `/workspace/evidence/system1/tests.txt` test artifact covers this alongside the rest of the 30-test suite. If the loop searched generated prose for a phrase such as `"done"` or `"route"`, the `claim_03_water_damage` run could terminate incorrectly even though its structured sequence required five `tool_use` turns before `end_turn`. The test also protects against replacing `stop_reason` with an arbitrary integer iteration cap.
 
 3. **Tool design.** Pick two tools with overlapping inputs. How do the descriptions prevent misrouting? What did a structured tool error let the agent do that a generic string would not?
 
